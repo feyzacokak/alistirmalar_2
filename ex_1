@@ -1,0 +1,21 @@
+import random
+dogruyer=0
+yanlisyer=0
+sayi=random.randrange(10,99)
+while sayi%11==0:
+    sayi=random.randrange(10,99)
+tahmin=int(input("lütfen 10 ile 98 arasında bir sayı girin."))
+while tahmin!=sayi:
+    if tahmin<10 or tahmin>98 or tahmin%11==0:
+        tahmin=int(input("lütfen 10 ile 98 arasında basamakları farklı bir sayı girin."))
+    else:
+        if str(sayi)[0]==str(tahmin)[0] or str(sayi)[1]==str(tahmin)[1]:
+            dogruyer+=1
+            print("dogruyer=", dogruyer)
+            tahmin=int(input("lütfen 10 ile 98 arasında bir sayı girin."))
+        else:
+            yanlisyer-=1
+            print("yanlisyer=",yanlisyer)
+            tahmin=int(input("lütfen 10 ile 98 arasında bir sayı girin."))
+else:    
+    print("tebrikler ",sayi," sayısını buldunuz.")
